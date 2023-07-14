@@ -21,9 +21,6 @@ async function ModifyData(status) {
     console.log(result);
     if (result.success) {
       console.log(result.message);
-      if (status === "ready") alert("배송 상태를 준비로 변경했습니다.");
-      if (status === "shipping") alert("배송 상태를 진행으로 변경했습니다.");
-      if (status === "complete") alert("배송 상태를 완료로 변경했습니다.");
     } else {
       console.log("오류");
     }

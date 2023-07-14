@@ -8,10 +8,13 @@ const deleteData = async (productId) => {
       headers: {
         authorization: `Bearer ${token}`,
       },
+      },
     });
 
+
     if (response.success) {
-      console.log("삭제성공", response.message);
+      console.log(response.message);
+    }
     }
   } catch (error) {
     console.error(error);

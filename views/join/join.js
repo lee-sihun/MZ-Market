@@ -75,6 +75,7 @@ async function createAccount() {
 
 joinButton.addEventListener("click", createAccount);
 
+let authCode;
 authButton.addEventListener("click", async () => {
   authButton.disabled = true;
   startTimer();
@@ -92,9 +93,7 @@ authButton.addEventListener("click", async () => {
       body: JSON.stringify(data),
     });
     completeButton.disabled = false;
-  } catch (error) {
-    console.log("실패");
-  }
+  } catch (error) {}
 });
 
 completeButton.addEventListener("click", async () => {
@@ -110,8 +109,6 @@ completeButton.addEventListener("click", async () => {
   if (result.success) {
     alert("인증에 성공했습니다!");
     joinButton.disabled = false;
-  } else {
-    alert("인증에 실패했습니다!");
   }
 });
 

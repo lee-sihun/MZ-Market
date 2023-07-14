@@ -7,6 +7,15 @@ document.addEventListener("DOMContentLoaded", async function () {
       const name = ary.name;
       const newLabel = document.createElement("label");
       newLabel.innerHTML = `
+const checkboxContainer = document.querySelector(".checkbox-container");
+document.addEventListener("DOMContentLoaded", async function () {
+  try {
+    const result = await getProductcategory();
+    console.log(result.categorys[0].name);
+    result.categorys.forEach((ary) => {
+      const name = ary.name;
+      const newLabel = document.createElement("label");
+      newLabel.innerHTML = `
           <input type="radio"  name="category" onclick="updateCategoryValue(this)"> ${name}
       `;
       checkboxContainer.appendChild(newLabel);

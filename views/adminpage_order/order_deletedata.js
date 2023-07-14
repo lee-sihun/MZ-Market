@@ -13,7 +13,6 @@ const deleteData = async (orderId) => {
     console.log(result);
     if (result.success) {
       console.log(result.message);
-      location.reload();
     } else {
       console.log("오류");
     }
